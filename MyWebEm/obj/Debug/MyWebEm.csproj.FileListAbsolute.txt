@@ -1,0 +1,4 @@
+C:\Users\Emel\Documents\Visual Studio 2015\Projects\Phase-1---Dot-Net\MyWebEm\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Emel\Documents\Visual Studio 2015\Projects\Phase-1---Dot-Net\MyWebEm\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Emel\Documents\Visual Studio 2015\Projects\Phase-1---Dot-Net\MyWebEm\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Emel\Documents\Visual Studio 2015\Projects\Phase-1---Dot-Net\MyWebEm\bin\roslyn\VBCSCompiler.exe
