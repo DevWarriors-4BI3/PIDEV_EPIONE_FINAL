@@ -120,6 +120,10 @@
     <Compile Include="Migrations\201811081912067_Migrationv2.0.Designer.cs">
       <DependentUpon>201811081912067_Migrationv2.0.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811101145093_mig.cs" />
+    <Compile Include="Migrations\201811101145093_mig.Designer.cs">
+      <DependentUpon>201811101145093_mig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PiContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811081912067_Migrationv2.0.resx">
       <DependentUpon>201811081912067_Migrationv2.0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811101145093_mig.resx">
+      <DependentUpon>201811101145093_mig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

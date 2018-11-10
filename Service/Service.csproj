@@ -104,10 +104,16 @@
     <Compile Include="Identity\ApplicationSignInManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
     <Compile Include="Identity\IServiceUser.cs" />
+    <Compile Include="IServiceAddresse.cs" />
     <Compile Include="IServiceAppointment.cs" />
+    <Compile Include="IserviceDocteur.cs" />
+    <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Identity\ServiceUser.cs" />
+    <Compile Include="ServiceAddresse.cs" />
     <Compile Include="ServiceAppointment.cs" />
+    <Compile Include="ServiceDocteur.cs" />
+    <Compile Include="ServiceUser.cs" />
     <Compile Include="Startup.Service.cs" />
   </ItemGroup>
   <ItemGroup>

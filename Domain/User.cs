@@ -40,7 +40,7 @@ namespace Domain
         //public String confirmPassword { get; set; }
         //[Required(ErrorMessage = "Champ obligatoire")]
         //[MaxLength(50)]
-        public virtual Address address { get; set; }
+        public Address address { get; set; }
         
        // public EAccountType role { get; set; }
    

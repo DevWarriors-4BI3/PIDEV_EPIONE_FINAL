@@ -216,14 +216,21 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EspacePatientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PatientIndexController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811101138037_mig.cs" />
+    <Compile Include="Migrations\201811101138037_mig.Designer.cs">
+      <DependentUpon>201811101138037_mig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ModelUserDoctor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1344,6 +1351,7 @@
     <Content Include="Views\EspacePatient\PatientMain.cshtml" />
     <Content Include="Views\EspaceDoctor\DoctorMain.cshtml" />
     <Content Include="Views\EspaceAdmin\AdministratorMain.cshtml" />
+    <Content Include="Views\EspacePatient\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="adminlte\documentation\" />
@@ -1358,10 +1366,19 @@
       <Project>{80b0794a-953f-4095-b8fd-6b87b361c40e}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ServicePattern\ServicePattern.csproj">
+      <Project>{498E3058-8C85-4442-8C96-06135C96D03D}</Project>
+      <Name>ServicePattern</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{e74c8001-7beb-4688-a8df-9f13dcfd8815}</Project>
       <Name>Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811101138037_mig.resx">
+      <DependentUpon>201811101138037_mig.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
