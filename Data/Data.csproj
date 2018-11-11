@@ -124,6 +124,14 @@
     <Compile Include="Migrations\201811101145093_mig.Designer.cs">
       <DependentUpon>201811101145093_mig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811101243482_Migdoctordisponibility.cs" />
+    <Compile Include="Migrations\201811101243482_Migdoctordisponibility.Designer.cs">
+      <DependentUpon>201811101243482_Migdoctordisponibility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811111156585_malekmig.cs" />
+    <Compile Include="Migrations\201811111156585_malekmig.Designer.cs">
+      <DependentUpon>201811111156585_malekmig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PiContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -150,6 +158,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811101145093_mig.resx">
       <DependentUpon>201811101145093_mig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811101243482_Migdoctordisponibility.resx">
+      <DependentUpon>201811101243482_Migdoctordisponibility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811111156585_malekmig.resx">
+      <DependentUpon>201811111156585_malekmig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    interface IServiceAppointment
-    { 
+   public interface IServiceAppointment : IService<Appointment>
+        {
+        Doctor GetDoctor();
     }
 }

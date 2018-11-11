@@ -1,0 +1,43 @@
+﻿@model Domain.Disponibility
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPatientSpace.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Disponibility</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.startTimeOfDisponibility)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.startTimeOfDisponibility)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endTimeOfDisponibility)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endTimeOfDisponibility)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DisponibilityId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

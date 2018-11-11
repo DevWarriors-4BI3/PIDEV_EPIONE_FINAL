@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    interface IUserService : IService<User>
+   public interface IUserService : IService<User>
     {
         IEnumerable<User> GetAllDoctors();
     }

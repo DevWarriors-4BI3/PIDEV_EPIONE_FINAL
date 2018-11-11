@@ -47,10 +47,10 @@
                         @Html.DisplayFor(modelItem => item.lastName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.address.country)
+                        @Html.DisplayFor(modelItem => item.address.AddressId)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Ajouter un Rendez-Vous", "AddAppointment") |
                         @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                         @Html.ActionLink("Delete", "Delete", new { id = item.Id })
                     </td>

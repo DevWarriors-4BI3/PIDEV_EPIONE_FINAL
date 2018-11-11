@@ -216,15 +216,24 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppointmentsController.cs" />
+    <Compile Include="Controllers\DisponibilitiesController.cs" />
     <Compile Include="Controllers\EspacePatientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PatientIndexController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201811101138037_mig.cs" />
     <Compile Include="Migrations\201811101138037_mig.Designer.cs">
       <DependentUpon>201811101138037_mig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811111137428_migreqaddress.cs" />
+    <Compile Include="Migrations\201811111137428_migreqaddress.Designer.cs">
+      <DependentUpon>201811111137428_migreqaddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811111155370_malekmig.cs" />
+    <Compile Include="Migrations\201811111155370_malekmig.Designer.cs">
+      <DependentUpon>201811111155370_malekmig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1341,7 +1350,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\EspacePatient\Manage\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_mainLayout.cshtml" />
     <Content Include="Views\Shared\_LayoutDoctorSpace.cshtml" />
@@ -1352,6 +1361,19 @@
     <Content Include="Views\EspaceDoctor\DoctorMain.cshtml" />
     <Content Include="Views\EspaceAdmin\AdministratorMain.cshtml" />
     <Content Include="Views\EspacePatient\Index.cshtml" />
+    <Content Include="Views\PatientAppointment\Create.cshtml" />
+    <Content Include="Views\PatientAppointment\Index.cshtml" />
+    <Content Include="Views\EspacePatient\AddAppointment.cshtml" />
+    <Content Include="Views\Appointments\Create.cshtml" />
+    <Content Include="Views\Appointments\Delete.cshtml" />
+    <Content Include="Views\Appointments\Details.cshtml" />
+    <Content Include="Views\Appointments\Edit.cshtml" />
+    <Content Include="Views\Appointments\Index.cshtml" />
+    <Content Include="Views\Disponibilities\Create.cshtml" />
+    <Content Include="Views\Disponibilities\Delete.cshtml" />
+    <Content Include="Views\Disponibilities\Details.cshtml" />
+    <Content Include="Views\Disponibilities\Edit.cshtml" />
+    <Content Include="Views\Disponibilities\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="adminlte\documentation\" />
@@ -1362,6 +1384,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{2936F783-8B62-46F0-B8F5-AC4D30793F88}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{80b0794a-953f-4095-b8fd-6b87b361c40e}</Project>
       <Name>Domain</Name>
@@ -1378,6 +1404,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201811101138037_mig.resx">
       <DependentUpon>201811101138037_mig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811111137428_migreqaddress.resx">
+      <DependentUpon>201811111137428_migreqaddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811111155370_malekmig.resx">
+      <DependentUpon>201811111155370_malekmig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

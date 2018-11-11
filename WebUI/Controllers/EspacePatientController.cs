@@ -1,28 +1,69 @@
 ﻿using Domain;
 using Service;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace WebUI.Controllers
 {
     public class EspacePatientController : Controller
     {
-        ServiceUser su = new ServiceUser();
-        ServiceDocteur sd = new ServiceDocteur();
-        ServiceAddresse sa = new ServiceAddresse();
+      
+        IserviceDocteur sd = new ServiceDocteur();
+        IServiceAddresse sa = new ServiceAddresse();
+        IServiceAppointment sap = new ServiceAppointment();
+        IServiceDisponibility sdispo = new ServiceDisponibility();
+        public static IEnumerable<Doctor> doctors; 
+        public static String persistantId;
         // GET: PatientIndex
         public ActionResult Index()
         {
             var AllAddresses = sd.GetAddresses();
             var All = sd.GetMany();
-
+            doctors = All;
             return View(All);
         }
+        //    return RedirectToAction( "Main", new RouteValueDictionary(
+        //new { controller = controllerName, action = "Main", Id = Id
+        //} ) );
 
-        // GET: PatientIndex/Details/5
+        public ActionResult AddAppointment(String id)
+        {
+          
+
+            return RedirectToAction("Create", "Appointments");
+        }
+        [HttpPost]
+        public ActionResult AddAppointment(Appointment doctor)
+        {
+            
+            //sd.Dispose();
+            //sa.Dispose();
+            //sap.Add(new Appointment()
+            //{ 
+            //    reason = doctor.reason,
+            //    appointementDate = DateTime.Now,
+            //    state = State.accepted
+            //});
+            //sap.Commit();
+
+            ////sdispo.Add(new Disponibility()
+            ////{
+            ////    doctor = d,
+            ////    startTimeOfDisponibility = DateTime.Now,
+            ////    endTimeOfDisponibility = DateTime.Now,
+            ////    State = true
+            ////});
+            ////sdispo.Commit();
+
+
+           return View();
+        }
+        // GET: PatientIndex/Details/5  
         public ActionResult Details(int id)
         {
             return View();

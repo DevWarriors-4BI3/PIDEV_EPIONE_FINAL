@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Domain.Disponibility>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPatientSpace.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.startTimeOfDisponibility)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.endTimeOfDisponibility)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.startTimeOfDisponibility)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.endTimeOfDisponibility)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DisponibilityId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DisponibilityId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DisponibilityId })
+        </td>
+    </tr>
+}
+
+</table>

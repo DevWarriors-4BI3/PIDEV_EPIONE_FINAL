@@ -17,8 +17,11 @@ namespace Data
         
         public PiContext() : base("Name=PIEPIONE")
         {
+            //Configuration.LazyLoadingEnabled = false;
+            
             Database.SetInitializer(new ContexInit());
-         }
+           
+        }
 
         //  public DbSet<Patient> Patients { get; set; }
         //  public DbSet<Doctor> Doctors{ get; set; }

@@ -29,5 +29,7 @@ namespace WebUI.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Domain.Appointment> Appointments { get; set; }
     }
 }

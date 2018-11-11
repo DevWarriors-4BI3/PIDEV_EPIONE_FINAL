@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    interface IServiceAddresse : IService<Address>
+   public interface IServiceAddresse : IService<Address>
     {
     }
 }

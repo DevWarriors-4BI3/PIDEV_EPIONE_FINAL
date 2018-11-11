@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    public interface IserviceDocteur:IService <Doctor>
+    public interface IserviceDocteur : IService<Doctor>
     {
+      IEnumerable<Address> GetAddresses();
     }
 }

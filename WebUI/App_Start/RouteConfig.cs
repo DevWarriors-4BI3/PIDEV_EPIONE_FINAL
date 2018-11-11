@@ -23,6 +23,11 @@ namespace WebUI
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "PatientIndex", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+               name: "PatientAppointment",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "PatientApointment", action = "Create", id = UrlParameter.Optional }
+           );
         }
     }
 }

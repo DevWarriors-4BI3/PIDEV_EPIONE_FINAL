@@ -19,6 +19,7 @@ namespace Service
 
     }
        public IEnumerable<User> GetAllDoctors() {
+
             return GetMany(p => p.GetType() == typeof(Doctor)); }
        
     }

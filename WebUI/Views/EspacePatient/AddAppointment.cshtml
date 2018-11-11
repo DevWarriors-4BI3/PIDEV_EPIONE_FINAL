@@ -1,0 +1,101 @@
+﻿@model Domain.Appointment
+
+@{
+    ViewBag.Title = "AddAppointment";
+    Layout = "~/Views/Shared/_LayoutPatientSpace.cshtml";
+}
+
+<h2>AddAppointment</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="box box-danger">
+        <div class="box-header">
+            <h3 class="box-title">Input masks</h3>
+        </div>
+        <div class="box-body">
+            <!-- Date dd/mm/yyyy -->
+            <div class="form-group">
+                <label>Date masks:</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                </div><!-- /.input group -->
+            </div><!-- /.form group -->
+            <!-- Date mm/dd/yyyy -->
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <input type="text" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask>
+                </div><!-- /.input group -->
+            </div><!-- /.form group -->
+            <!-- phone mask -->
+            <div class="form-group">
+                <label>US phone mask:</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
+                </div><!-- /.input group -->
+            </div><!-- /.form group -->
+            <!-- phone mask -->
+            <div class="form-group">
+                <label>Intl US phone mask:</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <input type="text" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask>
+                </div><!-- /.input group -->
+            </div><!-- /.form group -->
+            <!-- IP mask -->
+            <div class="form-group">
+                <label>IP mask:</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-laptop"></i>
+                    </div>
+                    <input type="text" class="form-control" data-inputmask="'alias': 'ip'" data-mask>
+                </div><!-- /.input group -->
+            </div><!-- /.form group -->
+        </div><!-- /.box-body -->
+    </div><!-- /.box -->
+
+        <div class="form-horizontal">
+            <h4>Appointment</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.appointementDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.appointementDate, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                    @Html.ValidationMessageFor(model => model.appointementDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.reason, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.reason, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.reason, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
