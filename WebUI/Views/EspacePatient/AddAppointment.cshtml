@@ -1,5 +1,6 @@
 ﻿@model Domain.Appointment
 
+
 @{
     ViewBag.Title = "AddAppointment";
     Layout = "~/Views/Shared/_LayoutPatientSpace.cshtml";
@@ -79,7 +80,7 @@
                     @Html.ValidationMessageFor(model => model.appointementDate, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+            <i class="fa fa-calendar"></i>
             <div class="form-group">
                 @Html.LabelFor(model => model.reason, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">

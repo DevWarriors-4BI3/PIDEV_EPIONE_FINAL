@@ -74,13 +74,18 @@ namespace ServicePattern
             //return _repository.Get(where);
             return utwk.getRepository<TEntity>().Get(where);
         }
+        public virtual IEnumerable<TEntity> GetAll()
+        {
+            return utwk.getRepository<TEntity>().GetAll();
+            //return _repository.GetById(id);
+            //  return utwk.getRepository<TEntity>().GetById(id);
+        }
 
-      
 
-     
 
-       
-       
+
+
+
         public void Commit()
         {
             try

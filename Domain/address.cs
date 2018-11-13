@@ -14,10 +14,10 @@ namespace Domain
         [Required(ErrorMessage = "le pays doit etre mentionné")]
         [MaxLength(50)]
         public String country { get; set; }
-        [Required(ErrorMessage = "la ville doit etre mentionné")]
+        [Required(ErrorMessage = "la ville doit etre mentionnée")]
         [MaxLength(50)]
         public String city { get; set; }
-        [Required(ErrorMessage = "la rue doit etre mentionné")]
+        [Required(ErrorMessage = "la rue doit etre mentionnée")]
         [MaxLength(50)]
         public String Street { get; set; }
       

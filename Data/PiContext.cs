@@ -30,7 +30,7 @@ namespace Data
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Address> Address { get; set; }
         public DbSet<Disponibility> Disponibilities { get; set; }
-
+        public DbSet<Events> events { get; set; }
         public DbSet<Report> Reports { get; set; }
         public DbSet<Treatement> Treatements { get; set; }
         public DbSet<MedicalPath> MedicalPaths { get; set; }

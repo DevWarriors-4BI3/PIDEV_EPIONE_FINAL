@@ -24,7 +24,7 @@
                         @Html.DisplayNameFor(model => model.lastName)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.address.country)
+                        @Html.DisplayNameFor(model => model.address)
                     </th>
                     <th>
                        Actions
@@ -47,7 +47,7 @@
                         @Html.DisplayFor(modelItem => item.lastName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.address.AddressId)
+                        @Html.DisplayFor(modelItem => item.address)
                     </td>
                     <td>
                         @Html.ActionLink("Ajouter un Rendez-Vous", "AddAppointment") |

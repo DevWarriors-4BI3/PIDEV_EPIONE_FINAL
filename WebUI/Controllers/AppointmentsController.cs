@@ -9,6 +9,12 @@ using System.Web.Mvc;
 using Domain;
 using WebUI.Models;
 using Service;
+using MimeKit;
+using MailKit.Net.Smtp;
+using Org.BouncyCastle.X509;
+using System.Security.Cryptography.X509Certificates;
+using System.Net.Security;
+using System.Net.Mail;
 
 namespace WebUI.Controllers
 {
@@ -16,9 +22,11 @@ namespace WebUI.Controllers
     {
         IServiceAppointment sap = new ServiceAppointment();
 
+        IServiceDisponibility sdipo= new ServiceDisponibility();
         // GET: Appointments
         public ActionResult Index()
         {
+            
             return View(sap.GetMany());
         }
 
@@ -37,7 +45,26 @@ namespace WebUI.Controllers
         // GET: Appointments/Create
         public ActionResult Create()
         {
-            return View();
+
+
+            AppointmentModel CreatelistDisponibilities = new AppointmentModel();
+            CreatelistDisponibilities.Disponibilities = sap.GetDisponibilities();
+
+            return View(CreatelistDisponibilities);
+        }
+        [Obsolete("Do not use this in Production code!!!", true)]
+        static void NEVER_EAT_POISON_Disable_CertificateValidation()
+        {
+          
+            ServicePointManager.ServerCertificateValidationCallback =
+                delegate (
+                    object s,
+                    System.Security.Cryptography.X509Certificates.X509Certificate certificate,
+                    X509Chain chain,
+                    SslPolicyErrors sslPolicyErrors
+                ) {
+                    return true;
+                };
         }
 
         // POST: Appointments/Create
@@ -45,16 +72,50 @@ namespace WebUI.Controllers
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AppointmentId,appointementDate,reason,state")] Appointment appointment)
+        public ActionResult Create(AppointmentModel AM)
         {
+           
+            Appointment a = new Appointment()
+            {
+                appointementDate = AM.appointement.appointementDate,
+                reason = AM.appointement.reason,
+                state = State.accepted
+
+            };
             if (ModelState.IsValid)
             {
-                sap.Add(appointment);
+               
+                sap.Add(AM.appointement);
                 sap.Commit();
                 return RedirectToAction("Index");
             }
+            var message = new MailMessage("devworriors@gmail.com", "medmalek125@gmail.com");
+            //message.From=new MailAddress("devworriors@gmail.com");
+            //message.From = new MailAddress("medmalek125@gmail.tn");
+            message.Subject = "Nouveau rendez-vous";
+            message.Body = "Hello";
+            System.Net.Mail.SmtpClient SC = new System.Net.Mail.SmtpClient("smtp.gmail.com");
+            SC.Port = 587;
+            SC.DeliveryMethod = SmtpDeliveryMethod.Network;
+            SC.UseDefaultCredentials = false;
+            SC.Credentials = new NetworkCredential("devworriors@gmail.com", "pidev-123456789");
+            SC.EnableSsl = true;
+            SC.Timeout = 20000;
+            message.Priority = MailPriority.High;
+            try
+            {
+                SC.Send(message);
 
-            return View(appointment);
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+                Console.ReadKey();
+            }
+        
+
+            return View();
         }
 
         // GET: Appointments/Edit/5

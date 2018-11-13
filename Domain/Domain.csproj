@@ -109,6 +109,7 @@
     <Compile Include="Chat.cs" />
     <Compile Include="Disponibility.cs" />
     <Compile Include="Doctor.cs" />
+    <Compile Include="Events.cs" />
     <Compile Include="Forum.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

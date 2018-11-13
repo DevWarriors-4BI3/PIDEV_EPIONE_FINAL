@@ -1,9 +1,66 @@
-﻿@model Domain.Appointment
+﻿@model WebUI.Models.AppointmentModel
 
 @{
     ViewBag.Title = "AddAppointment";
     Layout = "~/Views/Shared/_LayoutPatientSpace.cshtml";
 }
+
+
+
+
+<div class="box" style="width: 500px;">
+    <div class="box-header">
+       Calandier des Disponibilités
+    </div><!-- /.box-header -->
+    <div class="box-body">
+        <table id="example1" class="table table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        Jour
+                    </th>
+                    <th>
+                        Mois
+                    </th>
+                    <th>
+                        Année
+                    </th>
+                    <th>
+                        Heure Disponibles
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Disponibilities)
+                {
+                    <tr>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.startTimeOfDisponibility.Day)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.startTimeOfDisponibility.Month)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.startTimeOfDisponibility.Year)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.startTimeOfDisponibility.TimeOfDay)
+                        </td>
+
+
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div><!-- /.box-body -->
+</div><!-- /.box -->
+
+
+
+
 
 <h2>Ajouter Rendez-vous</h2>
 
@@ -24,18 +81,18 @@
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">
-                        @Html.LabelFor(model => model.appointementDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.appointement.appointementDate, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.appointementDate, new { htmlAttributes = new { @class = "form-control datepicker" } })
-                            @Html.ValidationMessageFor(model => model.appointementDate, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.appointement.appointementDate, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                            @Html.ValidationMessageFor(model => model.appointement.appointementDate, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.reason, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.appointement.reason, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.reason, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.reason, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.appointement.reason, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.appointement.reason, "", new { @class = "text-danger" })
                         </div>
                     </div>
 

@@ -22,10 +22,23 @@ namespace WebUI.Controllers
         // GET: PatientIndex
         public ActionResult Index()
         {
-            var AllAddresses = sd.GetAddresses();
-            var All = sd.GetMany();
-            doctors = All;
-            return View(All);
+            // var AllAddresses = sd.GetAddresses();
+       //     List<Doctor> lstd = new List<Doctor>();
+  
+       //foreach(var item in sd.GetAll())
+       //     {
+       //         Address aa = sa.GetById(item.address.AddressId);
+       //         Doctor d = new Doctor();
+       //         d.address.AddressId = item.address.AddressId;
+       //         d.firstName = item.firstName;
+       //         d.lastName = item.lastName;
+       //         d.Email = item.Email;
+       //         d.Speciality = item.Speciality;le 
+       //         d.address = aa;
+       //         d.disponibilities = item.disponibilities;
+       //         lstd.Add(d);
+       //     }
+            return View(sd.GetMany());
         }
         //    return RedirectToAction( "Main", new RouteValueDictionary(
         //new { controller = controllerName, action = "Main", Id = Id

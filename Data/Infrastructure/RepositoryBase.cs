@@ -22,6 +22,12 @@ namespace Data.Infrastructure
 
 
         }
+        public virtual IEnumerable<T> GetAll()
+        {
+            return dbset.ToList<T>();
+            //return _repository.GetById(id);
+            //  return utwk.getRepository<TEntity>().GetById(id);
+        }
         protected PiContext DataContext
         {
             get { return dataContext = databaseFactory.DataContext; }

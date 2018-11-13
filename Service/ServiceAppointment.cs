@@ -17,6 +17,12 @@ namespace Service
         public ServiceAppointment() : base(uow)
         {
         }
+
+        public IEnumerable<Disponibility> GetDisponibilities()
+        {
+            return uow.getRepository<Disponibility>().GetMany();
+        }
+
         public Doctor GetDoctor()
         {
 

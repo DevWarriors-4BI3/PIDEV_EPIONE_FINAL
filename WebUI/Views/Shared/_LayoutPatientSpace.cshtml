@@ -405,6 +405,7 @@ desired effect
     <!-- Optionally, you can add Slimscroll and FastClick plugins.~/adminlte/plugins/datatables/dataTables.bootstrap.css
          Both of these plugins are recommended to enhance the
          user experience. -->
+    @RenderSection("Scripts",false)
     <script>
       $(function () {
         $("#example1").DataTable();
@@ -417,6 +418,7 @@ desired effect
           "autoWidth": false
         });
       });
+
     </script>
 </body>
 </html>

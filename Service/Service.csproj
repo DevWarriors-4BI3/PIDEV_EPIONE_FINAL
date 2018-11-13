@@ -108,6 +108,7 @@
     <Compile Include="IServiceAppointment.cs" />
     <Compile Include="IServiceDisponibility.cs" />
     <Compile Include="IserviceDocteur.cs" />
+    <Compile Include="IServiceEvents.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Identity\ServiceUser.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="ServiceAppointment.cs" />
     <Compile Include="ServiceDisponibility.cs" />
     <Compile Include="ServiceDocteur.cs" />
+    <Compile Include="ServiceEvents.cs" />
     <Compile Include="ServiceUser.cs" />
     <Compile Include="Startup.Service.cs" />
   </ItemGroup>
