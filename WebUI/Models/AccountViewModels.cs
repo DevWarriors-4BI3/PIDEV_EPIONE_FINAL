@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace WebUI.Models
 {
@@ -31,7 +33,7 @@ namespace WebUI.Models
 
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
             [Required]
@@ -40,6 +42,12 @@ namespace WebUI.Models
 
             [Required]
             public virtual Address address { get; set; }
+
+            [ForeignKey("Speciality")]
+            [Display(Name = "Speciality")]
+            public int? SpecialityId { get; set; }
+            public IEnumerable<SelectListItem> Specialitys { get; set; }
+
         }
 
         public class LoginViewModel

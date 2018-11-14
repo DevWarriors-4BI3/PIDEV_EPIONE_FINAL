@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Domain.Treatement>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDoctorSpace.cshtml";
+}
+
+<h2>list des tretements du patient </h2>
+
+
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DuréeTretement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateTretement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Validation)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DuréeTretement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTretement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Validation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TreatementId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TreatementId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TreatementId })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("<- Go Back ", "listPatient")
+</div>
+
+

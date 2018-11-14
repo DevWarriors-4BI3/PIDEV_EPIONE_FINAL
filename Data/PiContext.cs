@@ -14,7 +14,8 @@ namespace Data
  //   [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class PiContext : IdentityDbContext<User>
     {
-        
+     
+       
         public PiContext() : base("Name=PIEPIONE")
         {
             //Configuration.LazyLoadingEnabled = false;

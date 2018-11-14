@@ -12,6 +12,8 @@ using WebUI.Models;
 using ServicePattern;
 using Domain;
 using Service.Identity;
+using static WebUI.Models.AccountViewModels;
+using Service;
 
 namespace WebUI.Controllers
 {
@@ -24,8 +26,8 @@ namespace WebUI.Controllers
 
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        private readonly ServiceUser _userService = new ServiceUser();
-
+        //private readonly ServiceUser _userService = new ServiceUser();
+        ServiceSpeciality ss = new ServiceSpeciality();
 
         public ApplicationSignInManager SignInManager
         {
@@ -125,7 +127,16 @@ namespace WebUI.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            RegisterViewModel rm = new RegisterViewModel();
+            rm.Specialitys = ss.GetMany().Select(c => new SelectListItem
+            {
+
+                Text = c.nomSpecialite,
+                Value = c.SpecialityId.ToString()
+
+            }
+           );
+            return View(rm);
         }
 
         //
@@ -167,7 +178,7 @@ namespace WebUI.Controllers
                     case EAccountType.Doctor:
                         {
                             // create new Ngo and map form values to the instance
-                            Doctor ngo = new Doctor { UserName = model.Email, Email = model.Email, address = model.address, firstName = model.firstName, lastName = model.lastName };
+                            Doctor ngo = new Doctor { UserName = model.Email, Email = model.Email, address = model.address, firstName = model.firstName, lastName = model.lastName ,  SpecialityId = model.SpecialityId };
                             result = await UserManager.CreateAsync(ngo, model.Password);
 
                             // Add Ngo role to the new User

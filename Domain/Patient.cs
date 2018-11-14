@@ -8,6 +8,6 @@ namespace Domain
 {
    public class Patient: User
     {
-        public MedicalPath pathId{ get; set; }
+       // public MedicalPath pathId{ get; set; }
 }
 }

@@ -16,9 +16,22 @@ namespace Domain
         [MaxLength(50)]
         [DataType(DataType.MultilineText)]
         public String description { get; set; }
-        [Required(ErrorMessage ="Durée obligatoire")]
-        public int daysDuration { get; set; }
-        public Validation isValitaded { get; set; }
-        public MedicalPath path { get; set; }
+        [Required(ErrorMessage = "Durée obligatoire")]
+
+        public string DuréeTretement { get; set; }
+
+
+        [Display(Name = "Tretement Date")]
+        [DataType(DataType.Date)]
+        public DateTime DateTretement { get; set; }
+
+
+
+        public virtual User User { get; set; }
+        [ForeignKey("User")]
+        public string UserId { get; set; }
+
+        public bool Validation { get; set; }
+        // public MedicalPath path { get; set; }
     }
 }

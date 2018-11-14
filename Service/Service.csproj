@@ -110,7 +110,11 @@
     <Compile Include="IServiceDisponibility.cs" />
     <Compile Include="IserviceDocteur.cs" />
     <Compile Include="IServiceEvents.cs" />
+    <Compile Include="IServiceMedicalPath.cs" />
+    <Compile Include="IServicePatient.cs" />
     <Compile Include="IServicePost.cs" />
+    <Compile Include="IServiceSpeciality.cs" />
+    <Compile Include="IServiceTretement.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Identity\ServiceUser.cs" />
@@ -120,7 +124,11 @@
     <Compile Include="ServiceDisponibility.cs" />
     <Compile Include="ServiceDocteur.cs" />
     <Compile Include="ServiceEvents.cs" />
+    <Compile Include="ServiceMedicalPath.cs" />
+    <Compile Include="ServicePatient.cs" />
     <Compile Include="ServicePost.cs" />
+    <Compile Include="ServiceSpeciality.cs" />
+    <Compile Include="ServiceTretement.cs" />
     <Compile Include="ServiceUser.cs" />
     <Compile Include="Startup.Service.cs" />
   </ItemGroup>
