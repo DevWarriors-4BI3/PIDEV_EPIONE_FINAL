@@ -23,10 +23,33 @@ namespace Service
             return uow.getRepository<Disponibility>().GetMany();
         }
 
-        public Doctor GetDoctor()
+        
+
+        public Disponibility GetDisponibilityById(int id)
+        {
+            return uow.getRepository<Disponibility>().GetById(id); 
+        }
+
+        public Doctor GetDoctor(string id)
         {
 
-            return uow.getRepository<Doctor>().GetById("952b6457-fdbe-4c8e-ae98-0b0992b16b19");
+            return uow.getRepository<Doctor>().GetById(id);
+        }
+
+        public User GetCrrentUserById(string id)
+        {
+
+            return uow.getRepository<User>().GetById(id);
+        }
+
+        public IEnumerable<Disponibility> GetDisponibilities(string id)
+        {
+            return uow.getRepository<Disponibility>().GetMany().Where(p => p.startTimeOfDisponibility >= DateTime.Now).Where(p => p.doctor.Id == id);
+        }
+
+        public Doctor GetDoctor()
+        {
+            throw new NotImplementedException();
         }
     }
 }

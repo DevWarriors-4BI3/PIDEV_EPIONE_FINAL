@@ -18,9 +18,7 @@
         <th>
             @Html.DisplayNameFor(model => model.reason)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.state)
-        </th>
+        
         <th></th>
     </tr>
 
@@ -32,13 +30,13 @@
         <td>
             @Html.DisplayFor(modelItem => item.reason)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.state)
-        </td>
+        
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AppointmentId }) |
             @Html.ActionLink("Details", "Details", new { id=item.AppointmentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AppointmentId })
+            @Html.ActionLink("Delete", "Delete", new { id=item.AppointmentId }) |
+            @Html.ActionLink("Génerer pdf", "PrintViewToPdf", new { id = item.AppointmentId })
+            
         </td>
     </tr>
 }

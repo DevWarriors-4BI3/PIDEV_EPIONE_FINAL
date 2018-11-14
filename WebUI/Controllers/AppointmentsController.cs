@@ -15,18 +15,27 @@ using Org.BouncyCastle.X509;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 using System.Net.Mail;
+using Rotativa;
+using Microsoft.AspNet.Identity;
+using WebUI.Controllers;
+
 
 namespace WebUI.Controllers
 {
     public class AppointmentsController : Controller
     {
         IServiceAppointment sap = new ServiceAppointment();
+        IserviceDocteur sd = new ServiceDocteur();
 
         IServiceDisponibility sdipo= new ServiceDisponibility();
+        IUserService us = new ServiceUser();
+
+        
+
         // GET: Appointments
         public ActionResult Index()
         {
-            
+            Global.appointmentToEditId = 0;   
             return View(sap.GetMany());
         }
 
@@ -45,10 +54,10 @@ namespace WebUI.Controllers
         // GET: Appointments/Create
         public ActionResult Create()
         {
-
+            
 
             AppointmentModel CreatelistDisponibilities = new AppointmentModel();
-            CreatelistDisponibilities.Disponibilities = sap.GetDisponibilities();
+            CreatelistDisponibilities.Disponibilities = sap.GetDisponibilities(Global.globalIdDoctor);
 
             return View(CreatelistDisponibilities);
         }
@@ -72,47 +81,117 @@ namespace WebUI.Controllers
         // plus de détails, voir  http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(AppointmentModel AM)
+        public ActionResult Create(AppointmentModel AM, int id)
         {
-           
-            Appointment a = new Appointment()
+            if (Global.appointmentToEditId == 0)
             {
-                appointementDate = AM.appointement.appointementDate,
-                reason = AM.appointement.reason,
-                state = State.accepted
+                Doctor dr = sap.GetDoctor(Global.globalIdDoctor);
+                User u = sap.GetCrrentUserById(User.Identity.GetUserId());
+                Disponibility d = sap.GetDisponibilityById(id);
+                Appointment a = new Appointment()
+                {
+                    appointementDate = d.startTimeOfDisponibility,
+                    reason = AM.appointement.reason,
+                    state = State.accepted,
+                    patient = u,
+                    doctor = dr
 
-            };
-            if (ModelState.IsValid)
-            {
-               
-                sap.Add(AM.appointement);
+
+                };
+
+
+                sap.Add(a);
                 sap.Commit();
-                return RedirectToAction("Index");
-            }
-            var message = new MailMessage("devworriors@gmail.com", "medmalek125@gmail.com");
-            //message.From=new MailAddress("devworriors@gmail.com");
-            //message.From = new MailAddress("medmalek125@gmail.tn");
-            message.Subject = "Nouveau rendez-vous";
-            message.Body = "Hello";
-            System.Net.Mail.SmtpClient SC = new System.Net.Mail.SmtpClient("smtp.gmail.com");
-            SC.Port = 587;
-            SC.DeliveryMethod = SmtpDeliveryMethod.Network;
-            SC.UseDefaultCredentials = false;
-            SC.Credentials = new NetworkCredential("devworriors@gmail.com", "pidev-123456789");
-            SC.EnableSsl = true;
-            SC.Timeout = 20000;
-            message.Priority = MailPriority.High;
-            try
-            {
-                SC.Send(message);
 
-            }
-            catch (Exception e)
-            {
+                var message = new MailMessage("devworriors@gmail.com", dr.Email);
+                //message.From=new MailAddress("devworriors@gmail.com");
+                //message.From = new MailAddress("medmalek125@gmail.tn");
+                message.Subject = "Nouveau rendez-vous";
+                message.Body = "Bonsoir Dr."+dr.firstName+" "+dr.lastName+" , je vous informe que je serais au rendez-vous pour le "+d.startTimeOfDisponibility
+                    +"                                                                                                               Cordialement"+u.lastName+" "+u.firstName;
+                System.Net.Mail.SmtpClient SC = new System.Net.Mail.SmtpClient("smtp.gmail.com");
+                SC.Port = 587;
+                SC.DeliveryMethod = SmtpDeliveryMethod.Network;
+                SC.UseDefaultCredentials = false;
+                SC.Credentials = new NetworkCredential("devworriors@gmail.com", "pidev-123456789");
+                SC.EnableSsl = true;
+                SC.Timeout = 20000;
+                message.Priority = MailPriority.High;
+                try
+                {
+                    SC.Send(message);
 
-                Console.WriteLine(e.Message);
-                Console.ReadKey();
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.Message);
+                    Console.ReadKey();
+                }
             }
+            else
+            {
+                Doctor dr = sap.GetDoctor(Global.globalIdDoctor);
+                User u = sap.GetCrrentUserById(User.Identity.GetUserId());
+                Disponibility d = sap.GetDisponibilityById(id);
+                Appointment a = sap.GetById(Global.appointmentToEditId);
+                a.reason = AM.appointement.reason;
+                a.appointementDate = d.startTimeOfDisponibility;
+                sap.Update(a);
+                sap.Commit();
+                var message = new MailMessage("devworriors@gmail.com", dr.Email);
+                //message.From=new MailAddress("devworriors@gmail.com");
+                //message.From = new MailAddress("medmalek125@gmail.tn");
+                message.Subject = "Nouveau rendez-vous";
+                message.Body = "Bonsoir Dr." + dr.firstName + " " + dr.lastName + " , je vous informe que mon rendez-vous est mis à jours pour le " + d.startTimeOfDisponibility
+                    + "                                                                                                               Cordialement" + u.lastName + " " + u.firstName;
+                System.Net.Mail.SmtpClient SC = new System.Net.Mail.SmtpClient("smtp.gmail.com");
+                SC.Port = 587;
+                SC.DeliveryMethod = SmtpDeliveryMethod.Network;
+                SC.UseDefaultCredentials = false;
+                SC.Credentials = new NetworkCredential("devworriors@gmail.com", "pidev-123456789");
+                SC.EnableSsl = true;
+                SC.Timeout = 20000;
+                message.Priority = MailPriority.High;
+                try
+                {
+                    SC.Send(message);
+
+                }
+                catch (Exception e)
+                {
+
+                    Console.WriteLine(e.Message);
+                    Console.ReadKey();
+                }
+            }
+            Global.appointmentToEditId = 0;
+            return RedirectToAction("Index");
+         
+            //var message = new MailMessage("devworriors@gmail.com", "medmalek125@gmail.com");
+            ////message.From=new MailAddress("devworriors@gmail.com");
+            ////message.From = new MailAddress("medmalek125@gmail.tn");
+            //message.Subject = "Nouveau rendez-vous";
+            //message.Body = "Hello";
+            //System.Net.Mail.SmtpClient SC = new System.Net.Mail.SmtpClient("smtp.gmail.com");
+            //SC.Port = 587;
+            //SC.DeliveryMethod = SmtpDeliveryMethod.Network;
+            //SC.UseDefaultCredentials = false;
+            //SC.Credentials = new NetworkCredential("devworriors@gmail.com", "pidev-123456789");
+            //SC.EnableSsl = true;
+            //SC.Timeout = 20000;
+            //message.Priority = MailPriority.High;
+            //try
+            //{
+            //    SC.Send(message);
+
+            //}
+            //catch (Exception e)
+            //{
+
+            //    Console.WriteLine(e.Message);
+            //    Console.ReadKey();
+            //}
         
 
             return View();
@@ -121,16 +200,8 @@ namespace WebUI.Controllers
         // GET: Appointments/Edit/5
         public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Appointment appointment = sap.GetById(id);
-            if (appointment == null)
-            {
-                return HttpNotFound();
-            }
-            return View(appointment);
+            Global.appointmentToEditId = id;
+            return RedirectToAction("Create");
         }
 
         // POST: Appointments/Edit/5
@@ -140,28 +211,18 @@ namespace WebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "AppointmentId,appointementDate,reason,state")] Appointment appointment)
         {
-            if (ModelState.IsValid)
-            {
-                //sap.Entry(appointment).State = EntityState.Modified;
-                //db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+           Appointment a= sap.GetById(Global.appointmentToEditId);
+     
             return View(appointment);
         }
 
         // GET: Appointments/Delete/5
         public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Appointment appointment = sap.GetById(id);
-            if (appointment == null)
-            {
-                return HttpNotFound();
-            }
-            return View(appointment);
+            sap.Delete(appointment);
+            sap.Commit();
+            return RedirectToAction("Index");
         }
 
         // POST: Appointments/Delete/5
@@ -175,6 +236,22 @@ namespace WebUI.Controllers
             return RedirectToAction("Index");
         }
 
-     
+
+        
+
+        [HttpPost]
+        public ActionResult PrintViewToPdf(int id)
+        {
+            User.Identity.GetUserId();
+
+
+               var report = new ActionAsPdf("Index");
+            return report;
+        }
+
+
+
+      
+
     }
 }

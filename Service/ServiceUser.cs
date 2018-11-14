@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    public class ServiceUser : Service<User>, IServiceUser
+    public class ServiceUser : Service<User>, IUserService
     {
         static IDatabaseFactory dbf = new DatabaseFactory();
     static IUnitOfWork uow = new UnitOfWork(dbf);

@@ -267,8 +267,10 @@ desired effect
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">Menu de Navigation</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Mon Parcours</span></a></li>
-                   
+                    <li class="active"><a href="@Url.Action("Index", "EspacePatient")"><i class="fa fa-link"></i> <span>Ajouter Rendez-Vous</span></a></li>
+                    <li class="active"><a href="@Url.Action("Index", "Appointments")"><i class="fa fa-link"></i> <span>Gérer Mes Rendez-Vous</span></a></li>
+                    <li class="active"><a href="@Url.Action("Index", "event")"><i class="fa fa-link"></i> <span>Calandier Rendez-Vous</span></a></li>
+
                     <li><a href="#"><i class="fa fa-link"></i> <span>Consulter Medecin en Temps Réel</span></a></li>
                     <li><a href="#"><i class="fa fa-link"></i> <span>Forum</span></a></li>
 
@@ -415,10 +417,17 @@ desired effect
           "searching": false,
           "ordering": true,
           "info": true,
-          "autoWidth": false
+          "autoWidth": false,
+           "select":true
         });
       });
+        
+    var table = $('#example1').DataTable();
 
+    $('#example tbody').on('click', 'tr', function () {
+        console.log(table.row(this).data());
+    });
+    
     </script>
 </body>
 </html>

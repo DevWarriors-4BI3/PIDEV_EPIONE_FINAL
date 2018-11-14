@@ -142,3 +142,4 @@ C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FI
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.x9.resources
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.mig12.resources
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.mig13.resources
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.x123.resources

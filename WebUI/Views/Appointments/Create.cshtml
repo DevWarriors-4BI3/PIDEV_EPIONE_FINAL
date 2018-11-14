@@ -6,14 +6,13 @@
 }
 
 
-
-
-<div class="box" style="width: 500px;">
+<div class="box">
     <div class="box-header">
-       Calandier des Disponibilités
+        <h3 class="box-title">Ajouter Rendez-Vous</h3>
     </div><!-- /.box-header -->
     <div class="box-body">
-        <table id="example1" class="table table-bordered table-dark">
+        <table id="example1" class="table table-bordered table-striped">
+
             <thead>
                 <tr>
                     <th>
@@ -28,7 +27,9 @@
                     <th>
                         Heure Disponibles
                     </th>
-
+                    <th>
+                        Ajouter Rendez-Vous
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -49,7 +50,40 @@
                             @Html.DisplayFor(modelItem => item.startTimeOfDisponibility.TimeOfDay)
                         </td>
 
+                        <td>
 
+                            @using (Html.BeginForm("Create", "Appointments", new { id = item.DisponibilityId }, FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+
+
+                                        <!-- Date dd/mm/yyyy -->
+                                <div class="form-group">
+                                    <!-- /.input group -->
+                                    <div class="form-horizontal" style="width:400px">
+                                        <h4>Appointment</h4>
+                                        <hr />
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.appointement.reason, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.appointement.reason, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.appointement.reason, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        @item.DisponibilityId
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <input type="submit" value="Create" class="btn btn-default" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- /.form group -->
+
+
+
+                            }
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -57,64 +91,3 @@
         </table>
     </div><!-- /.box-body -->
 </div><!-- /.box -->
-
-
-
-
-
-<h2>Ajouter Rendez-vous</h2>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="box box-danger"style="width:600px">
-        <div class="box-header">
-            <h3 class="box-title">Ajouter Motif</h3>
-        </div>
-        <div class="box-body">
-            <!-- Date dd/mm/yyyy -->
-            <div class="form-group">
-             <!-- /.input group -->
-                <div class="form-horizontal">
-                    <h4>Appointment</h4>
-                    <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.appointement.appointementDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.appointement.appointementDate, new { htmlAttributes = new { @class = "form-control datepicker" } })
-                            @Html.ValidationMessageFor(model => model.appointement.appointementDate, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.appointement.reason, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.appointement.reason, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.appointement.reason, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Create" class="btn btn-default" />
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /.form group -->
-            <!-- Date mm/dd/yyyy -->
-           
-            <!-- phone mask -->
-            <!-- phone mask -->
-          
-        
-        </div><!-- /.box-body -->
-    </div><!-- /.box -->
-
-  
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

@@ -374,3 +374,16 @@ C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FI
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\MimeKit.dll
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\MailKit.xml
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\MimeKit.xml
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Gnostice.PDFOne.Controls.Web.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Gnostice.PDFOne.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Gnostice.PDFOne.Extensions.MVC.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Gnostice.PDFOne.PDFPrinter.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Gnostice.PDFOne.Windows.PDFBookmarks.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Gnostice.PDFOne.Windows.PDFViewer.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Gnostice.XtremeFontEngine.4.0.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Gnostice.XtremeImageEngine.4.0.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Ionic.Zlib.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\log4net.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\itextsharp.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Rotativa.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\itextsharp.xml

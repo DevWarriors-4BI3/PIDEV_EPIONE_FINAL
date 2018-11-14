@@ -44,12 +44,56 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
-      <HintPath>..\packages\BouncyCastle.1.8.2\lib\BouncyCastle.Crypto.dll</HintPath>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gnostice.PDFOne, Version=7.5.663.1526, Culture=neutral, PublicKeyToken=c91dc0d609de7d5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.PDFOne.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gnostice.PDFOne.Controls.Web, Version=7.5.663.1526, Culture=neutral, PublicKeyToken=c91dc0d609de7d5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.PDFOne.Controls.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gnostice.PDFOne.Extensions.MVC, Version=7.5.663.1526, Culture=neutral, PublicKeyToken=c91dc0d609de7d5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.PDFOne.Extensions.MVC.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gnostice.PDFOne.PDFPrinter, Version=7.5.663.1526, Culture=neutral, PublicKeyToken=c91dc0d609de7d5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.PDFOne.PDFPrinter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gnostice.PDFOne.Windows.PDFBookmarks, Version=7.5.663.1526, Culture=neutral, PublicKeyToken=c91dc0d609de7d5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.PDFOne.Windows.PDFBookmarks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gnostice.PDFOne.Windows.PDFViewer, Version=7.5.663.1526, Culture=neutral, PublicKeyToken=c91dc0d609de7d5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.PDFOne.Windows.PDFViewer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gnostice.XtremeFontEngine.4.0, Version=1.0.2056.447, Culture=neutral, PublicKeyToken=461de9da64be3a84, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.XtremeFontEngine.4.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gnostice.XtremeImageEngine.4.0, Version=12.0.1724.135, Culture=neutral, PublicKeyToken=67e9a3a7c22f1690, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Gnostice.XtremeImageEngine.4.0.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ionic.Zlib, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\Ionic.Zlib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFOne.NET.7.5.0\lib\net40\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MailKit, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
@@ -95,6 +139,10 @@
     </Reference>
     <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.13\lib\net452\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.5.0\lib\net40\Rotativa.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -1108,6 +1156,13 @@
     <Content Include="FrontTemplate\js\popper.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="NuGet.exe" />
+    <Content Include="Rotativa\libeay32.dll" />
+    <Content Include="Rotativa\libgcc_s_dw2-1.dll" />
+    <Content Include="Rotativa\mingwm10.dll" />
+    <Content Include="Rotativa\README.txt" />
+    <Content Include="Rotativa\ssleay32.dll" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -1336,6 +1391,7 @@
     <Content Include="FrontTemplate\scss\_type.scss" />
     <Content Include="FrontTemplate\scss\_utilities.scss" />
     <Content Include="FrontTemplate\scss\_variables.scss" />
+    <Content Include="App_Browsers\qt.browser" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

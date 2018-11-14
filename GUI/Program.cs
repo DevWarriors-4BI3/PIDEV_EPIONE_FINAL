@@ -50,7 +50,8 @@ namespace GUI
 
         static void Main(string[] args)
         {
-            MapsAPICall();
+         //   MapsAPICall();
+
         }
 
         //    var message = new MailMessage("devworriors@gmail.com", "medmalek125@gmail.com");

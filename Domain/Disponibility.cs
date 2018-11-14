@@ -15,7 +15,7 @@ namespace Domain
         [Required(ErrorMessage = "le date fin est obligatoire")]
         public DateTime endTimeOfDisponibility { get; set; }
         public bool State { get; set; }
-        public Doctor doctor { get; set; }
+        public virtual Doctor doctor { get; set; }
 
 
     }

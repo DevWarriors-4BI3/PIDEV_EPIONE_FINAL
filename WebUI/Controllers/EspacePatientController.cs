@@ -1,57 +1,135 @@
 ﻿using Domain;
+using Newtonsoft.Json;
 using Service;
 using Service;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Microsoft.AspNet.Identity;
 
 namespace WebUI.Controllers
 {
+   static class Global
+    {
+        public static string globalIdDoctor;
+        public static int appointmentToEditId;
+        public static Distance t;
+
+    }
+    public class Distance
+    {
+        public string text { get; set; }
+        public int value { get; set; }
+    }
+
+    public class Duration
+    {
+        public string text { get; set; }
+        public int value { get; set; }
+    }
+
+    public class Element
+    {
+        public static Distance distance { get; set; }
+        public Duration duration { get; set; }
+        public string status { get; set; }
+    }
+
+    public class Row
+    {
+        public Element[] elements { get; set; }
+    }
+
+    public class Parent
+    {
+        public string[] destination_addresses { get; set; }
+        public string[] origin_addresses { get; set; }
+        public Row[] rows { get; set; }
+        public string status { get; set; }
+    }
+
+
+
     public class EspacePatientController : Controller
     {
-      
+
+        IUserService us = new ServiceUser();
         IserviceDocteur sd = new ServiceDocteur();
         IServiceAddresse sa = new ServiceAddresse();
         IServiceAppointment sap = new ServiceAppointment();
         IServiceDisponibility sdispo = new ServiceDisponibility();
         public static IEnumerable<Doctor> doctors; 
-        public static String persistantId;
+        public static string persistantId;
+        public static IEnumerable<Doctor> aux;
         // GET: PatientIndex
+        private static void MapsAPICall(string origin,string destination)
+        {
+            string url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=AIzaSyA3E4sv-3MduZrfRvlQmnogNaD09dzGGS4";
+
+            //string url1 = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="+origin+"&destinations="+destination+"&key=AIzaSyA3E4sv-3MduZrfRvlQmnogNaD09dzGGS4";
+
+            //Pass request to google api with orgin and destination details
+            HttpWebRequest request =
+                    (HttpWebRequest)WebRequest.Create(url);
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            using (var streamReader = new StreamReader(response.GetResponseStream()))
+            {
+                var result = streamReader.ReadToEnd();
+
+                if (!string.IsNullOrEmpty(result))
+                {
+                    Distance t = JsonConvert.DeserializeObject<Distance>(result);
+                    Console.WriteLine(result);
+
+                    Console.WriteLine(t);
+                    Console.ReadKey();
+                }
+
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult Index(String SearchString)
+        {
+            int searshCondition = Int32.Parse(SearchString);
+            IEnumerable<Doctor> Searhxresult;
+
+            Searhxresult = aux.Where(p => p.distance < searshCondition);
+           
+            return View(aux);
+        }
+
         public ActionResult Index()
         {
-            // var AllAddresses = sd.GetAddresses();
-       //     List<Doctor> lstd = new List<Doctor>();
-  
-       //foreach(var item in sd.GetAll())
-       //     {
-       //         Address aa = sa.GetById(item.address.AddressId);
-       //         Doctor d = new Doctor();
-       //         d.address.AddressId = item.address.AddressId;
-       //         d.firstName = item.firstName;
-       //         d.lastName = item.lastName;
-       //         d.Email = item.Email;
-       //         d.Speciality = item.Speciality;le 
-       //         d.address = aa;
-       //         d.disponibilities = item.disponibilities;
-       //         lstd.Add(d);
-       //     }
-            return View(sd.GetMany());
+            Random rnd = new Random();
+            var aux = sd.GetMany();
+            foreach (Doctor a in aux)
+            {
+                //User u = us.GetById(User.Identity.GetUserId());
+                // MapsAPICall(a.address+"",u.address+"");
+                //a.distance = Global.t.value;
+                
+                a.distance = rnd.Next(52);
+            }
+            return View(aux);
         }
-        //    return RedirectToAction( "Main", new RouteValueDictionary(
-        //new { controller = controllerName, action = "Main", Id = Id
-        //} ) );
+       
 
-        public ActionResult AddAppointment(String id)
+        public ActionResult AddAppointment(string id)
         {
-          
-
+            Global.globalIdDoctor = id;
+            
             return RedirectToAction("Create", "Appointments");
         }
         [HttpPost]
-        public ActionResult AddAppointment(Appointment doctor)
+        public ActionResult AddAppointment(Appointment doctor, string id)
         {
             
             //sd.Dispose();

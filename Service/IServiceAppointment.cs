@@ -11,6 +11,11 @@ namespace Service
    public interface IServiceAppointment : IService<Appointment>
         {
         Doctor GetDoctor();
-        IEnumerable<Disponibility> GetDisponibilities();
+        IEnumerable<Disponibility> GetDisponibilities(string id);
+        Disponibility GetDisponibilityById(int id);
+        User GetCrrentUserById(String id);
+        Doctor GetDoctor(string id);
+
+
     }
 }
