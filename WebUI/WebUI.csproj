@@ -1499,6 +1499,16 @@
     <Content Include="Views\MedicalPath\Details.cshtml" />
     <Content Include="Views\MedicalPath\Edit.cshtml" />
     <Content Include="Views\MedicalPath\Index.cshtml" />
+    <Content Include="Views\Create.cshtml" />
+    <Content Include="Views\Delete.cshtml" />
+    <Content Include="Views\Details.cshtml" />
+    <Content Include="Views\Edit.cshtml" />
+    <Content Include="Views\Index.cshtml" />
+    <Content Include="Views\Tretement\Create.cshtml" />
+    <Content Include="Views\Tretement\Delete.cshtml" />
+    <Content Include="Views\Tretement\Details.cshtml" />
+    <Content Include="Views\Tretement\Edit.cshtml" />
+    <Content Include="Views\Tretement\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="adminlte\documentation\" />
