@@ -318,6 +318,7 @@ desired effect
                             </a>
                         </li>
                     </ul>
+                    @RenderBody()
                     <!-- /.control-sidebar-menu -->
                     <h3 class="control-sidebar-heading">Tasks Progress</h3>
                     <ul class="control-sidebar-menu">
@@ -364,6 +365,7 @@ desired effect
         <!-- Add the sidebar's background. This div must be placed
         immediately after the control sidebar -->
         <div class="control-sidebar-bg"></div>
+
     </div>
     <!-- ./wrapper -->
     <!-- REQUIRED JS SCRIPTS -->
@@ -376,5 +378,11 @@ desired effect
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
          user experience. -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
+
+@*  *@

@@ -37,6 +37,8 @@ namespace Data
         public DbSet<Chat> Chats { get; set; }
         public DbSet<Forum> Forums { get; set; }
         public DbSet<Speciality> Specialities { get; set; }
+        public virtual DbSet<Comment> Comments { get; set; }
+        public virtual DbSet<Post> Posts { get; set; }
 
 
 

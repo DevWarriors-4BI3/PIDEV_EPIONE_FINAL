@@ -1,0 +1,120 @@
+﻿@model IEnumerable<Domain.Post>
+
+@{
+    ViewBag.Title = "Index";
+    //  Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+<section class="content">
+
+    <div class="row">
+        <div class="col-md-3">
+
+            <!-- Profile Image -->
+            <!-- /.box -->
+            <!-- About Me Box -->
+            <!-- /.box -->
+        </div>
+
+        @if (!User.Identity.IsAuthenticated)
+        {
+
+        }
+        else
+        {
+
+            <a href="@Url.Action("create", "Post")" class="btn btn-primary"><b>Ajouter une nouvelle publication</b></a>
+
+        }
+        <!-- /.col -->
+        <div class="col-md-9">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#activity" data-toggle="tab">Forum</a></li>
+                    <li><a href="#timeline" data-toggle="tab">Timeline</a></li>
+                    <li><a href="#settings" data-toggle="tab">Settings</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="active tab-pane" id="activity">
+                        <!-- Post -->
+                        <!-- /.post -->
+                        <!-- Post -->
+                        @foreach (var item in Model)
+                        {
+
+                            var name = "";
+                            if (@item.User != null)
+                            {
+                                name = @item.User.firstName;
+                            }
+                            <div class="post clearfix">
+                                <div class="user-block">
+                                    <img class="img-circle img-bordered-sm" src="~/adminlte/dist/img/user7-128x128.jpg" alt="User Image">
+                                    <span class="username">
+                                        <a href="#">crée par :   @name </a>
+
+                                        <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
+                                    </span>
+
+                                    <p><span class="glyphicon glyphicon-time"></span> Creé le @item.PostedDate</p>
+                                </div>
+                                <!-- /.user-block -->
+                                <p>
+                                    <a href="@Url.Action("GetResponse", "Comments",new { id = item.PostID })">
+                                        Titre:  @item.Titre
+                                    </a>
+                                </p>
+
+                                <form class="form-horizontal">
+                                    <div class="form-group margin-bottom-none">
+                                        <div class="col-sm-9">
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="btn btn-danger pull-right btn-block btn-sm" href="@Url.Action("GetResponse", "Comments", new {id = item.PostID})">
+                                                Voir plus de détail <span class="glyphicon glyphicon-chevron-right"></span>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        <!-- /.post -->
+                        }
+                        <!-- Post -->
+                        <!-- /.post -->
+                    </div>
+
+
+                    @*  *@
+                    <!-- Page Content -->
+                
+
+                    <!-- Side Widget Well -->
+
+                </div>
+
+            </div>
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Footer -->
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </footer>
+
+        </div>
+        <!-- /.container -->
+        <!-- jQuery -->
+        <script src="~/Scripts/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="~/Scripts/bootstrap.min.js"></script>
