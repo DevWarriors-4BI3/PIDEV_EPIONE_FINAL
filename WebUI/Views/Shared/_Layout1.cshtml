@@ -20,6 +20,32 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="~/adminlte/bootstrap/css/_all-skins.min.css">
+    <link rel="stylesheet" href="~/adminlte/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome
+    <link rel="stylesheet" href="~/adminlte/font-awesome/css/font-awesome.min.css">-->
+    <!-- Ionicons
+    <link rel="stylesheet" href="~/adminlte/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/adminlte/dist/css/AdminLTE.css">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect. -->
+    <link rel="stylesheet" href="~/adminlte/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="~/adminlte/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="~/adminlte/dist/css/skins/skin-blue.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="~/adminlte/plugins/daterangepicker/daterangepicker-bs3.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="~/adminlte/plugins/iCheck/all.css">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="~/adminlte/plugins/colorpicker/bootstrap-colorpicker.min.css">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="~/adminlte/plugins/timepicker/bootstrap-timepicker.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/adminlte/plugins/select2/select2.min.css">
+
+    <link rel="stylesheet" href="~/adminlte/dist/css/skins/_all-skins.min.css">
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -47,11 +73,13 @@
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="@Url.Action("Index", "Chat")">Chat <span class="sr-only">(current)</span></a></li>
-                            <li><a href="#">Home</a></li>
+                       
                             <li><a href="@Url.Action("Index", "Post")">Forum</a></li>
+                            <li><a href="@Url.Action("Index", "EspacePatient")">Ajouter Rendez-Vous</a></li>
+                            <li ><a href="@Url.Action("Index", "Appointments")">Gérer Mes Rendez-Vous</a></li>
+                            <li ><a href="@Url.Action("Index", "event")">Calandier Rendez-Vous</a></li>
 
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Something else here</a></li>
+                           
 
                             @*<li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
@@ -72,11 +100,7 @@
                     <!-- /.navbar-collapse -->
                     <!-- Navbar Right Menu -->
                     <div class="navbar-custom-menu">
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
-                            </div>
-                        </form>
+                       
                         <ul class="nav navbar-nav">
 
                             @Html.Partial("_LoginPartial")
@@ -114,7 +138,7 @@
                                      </li>
                                      <li class="footer"><a href="#">See All Messages</a></li>
                                  </ul>*@
-                            </li>
+                          
                             <!-- /.messages-menu -->
                             <!-- Notifications Menu -->
                             @* <li class="dropdown notifications-menu">
@@ -139,7 +163,7 @@
                                     </li>
                                     <li class="footer"><a href="#">View all</a></li>
                                 </ul>*@
-                            </li>
+                            
                             <!-- Tasks Menu -->
                             @*<li class="dropdown tasks-menu">
                                     <!-- Menu Toggle Button -->
@@ -485,15 +509,8 @@
         <!-- /.tab-content -->
     </div>
     <!-- /.nav-tabs-custom -->
-    </div>
-    <!-- /.col -->
-    </div>
-    <!-- /.row -->
-    </section>
-    <!-- /.content -->
-    </div>
-
-    </div>
+   
+  
     <!-- ./wrapper -->
     <!-- jQuery 3 -->
     <script src="~/adminlte/dist/js/jquery.min.js"></script>
@@ -508,7 +525,43 @@
     <!-- AdminLTE for demo purposes -->
     <script src="~/adminlte/dist/js/demo.js"></script>
     <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script src="~/adminlte/plugins/jquery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="~/adminlte/bootstrap/js/bootstrap.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/adminlte/dist/js/app.js"></script>
+    <script src="~/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="~/adminlte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/adminlte/plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/adminlte/dist/js/app.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/adminlte/dist/js/demo.js"></script>
+ 
+    <script>
+      $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false,
+           "select":true
+        });
+      });
 
+    var table = $('#example1').DataTable();
+
+    $('#example tbody').on('click', 'tr', function () {
+        console.log(table.row(this).data());
+    });
+
+    </script>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

@@ -112,13 +112,13 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201811141228589_mariem.cs" />
-    <Compile Include="Migrations\201811141228589_mariem.Designer.cs">
-      <DependentUpon>201811141228589_mariem.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201811141144478_x123.cs" />
     <Compile Include="Migrations\201811141144478_x123.Designer.cs">
       <DependentUpon>201811141144478_x123.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811141706210_faouzi.cs" />
+    <Compile Include="Migrations\201811141706210_faouzi.Designer.cs">
+      <DependentUpon>201811141706210_faouzi.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PiContext.cs" />
@@ -138,11 +138,11 @@
     <Folder Include="Configurations\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811141228589_mariem.resx">
-      <DependentUpon>201811141228589_mariem.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811141144478_x123.resx">
       <DependentUpon>201811141144478_x123.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811141706210_faouzi.resx">
+      <DependentUpon>201811141706210_faouzi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

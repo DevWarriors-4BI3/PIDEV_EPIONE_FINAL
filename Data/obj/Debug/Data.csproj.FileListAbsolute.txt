@@ -131,20 +131,10 @@ C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FI
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\bin\Debug\fr\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\bin\Debug\fr\Microsoft.AspNet.Identity.Owin.resources.dll
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
-C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.UserMig.resources
-C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.Migrationv20.resources
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.csproj.GenerateResource.Cache
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.dll
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.pdb
-C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.mig.resources
-C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.Migdoctordisponibility.resources
-C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.malekmig.resources
-C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.x9.resources
-C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.mig12.resources
-C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.mig13.resources
-<<<<<<< HEAD
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.x123.resources
-=======
 C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINAL\PIDEV_EPIONE_FINAL\Data\bin\Debug\Data.dll.config
 C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINAL\PIDEV_EPIONE_FINAL\Data\bin\Debug\Data.dll
 C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINAL\PIDEV_EPIONE_FINAL\Data\bin\Debug\Data.pdb
@@ -186,4 +176,4 @@ C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINA
 C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINAL\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.pdb
 C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINAL\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.mariem.resources
 C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINAL\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.csproj.GenerateResource.Cache
->>>>>>> 972909105b36a1fc09fad12655004e34f88b91c3
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\Data\obj\Debug\Data.Migrations.faouzi.resources

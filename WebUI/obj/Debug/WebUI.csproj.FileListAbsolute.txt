@@ -374,7 +374,6 @@ C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FI
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\MimeKit.dll
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\MailKit.xml
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\MimeKit.xml
-<<<<<<< HEAD
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Gnostice.PDFOne.Controls.Web.dll
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Gnostice.PDFOne.dll
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Gnostice.PDFOne.Extensions.MVC.dll
@@ -388,7 +387,6 @@ C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FI
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\itextsharp.dll
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Rotativa.dll
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\itextsharp.xml
-=======
 C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINAL\PIDEV_EPIONE_FINAL\WebUI\bin\ApplicationInsights.config
 C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINAL\PIDEV_EPIONE_FINAL\WebUI\bin\roslyn\csc.exe
 C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINAL\PIDEV_EPIONE_FINAL\WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -527,4 +525,9 @@ C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINA
 C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINAL\PIDEV_EPIONE_FINAL\WebUI\obj\Debug\WebUI.csproj.GenerateResource.Cache
 C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINAL\PIDEV_EPIONE_FINAL\WebUI\obj\Debug\WebUI.dll
 C:\Users\Mariem benkacem\Documents\Visual Studio 2015\Projects\PIDEV_EPIONE_FINAL\PIDEV_EPIONE_FINAL\WebUI\obj\Debug\WebUI.pdb
->>>>>>> 972909105b36a1fc09fad12655004e34f88b91c3
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
