@@ -11,9 +11,10 @@ namespace WebUI
     {
         public void Configuration(IAppBuilder app)
         {
-            // ConfigureAuth(app);
+           ConfigureAuth(app);
 
             OwinInit(app);
+            app.MapSignalR();
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {

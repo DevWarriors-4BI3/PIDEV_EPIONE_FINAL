@@ -112,37 +112,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201811061953204_UserMig.cs" />
-    <Compile Include="Migrations\201811061953204_UserMig.Designer.cs">
-      <DependentUpon>201811061953204_UserMig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811081912067_Migrationv2.0.cs" />
-    <Compile Include="Migrations\201811081912067_Migrationv2.0.Designer.cs">
-      <DependentUpon>201811081912067_Migrationv2.0.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811101145093_mig.cs" />
-    <Compile Include="Migrations\201811101145093_mig.Designer.cs">
-      <DependentUpon>201811101145093_mig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811101243482_Migdoctordisponibility.cs" />
-    <Compile Include="Migrations\201811101243482_Migdoctordisponibility.Designer.cs">
-      <DependentUpon>201811101243482_Migdoctordisponibility.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811111156585_malekmig.cs" />
-    <Compile Include="Migrations\201811111156585_malekmig.Designer.cs">
-      <DependentUpon>201811111156585_malekmig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811112115313_x9.cs" />
-    <Compile Include="Migrations\201811112115313_x9.Designer.cs">
-      <DependentUpon>201811112115313_x9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811120854403_mig12.cs" />
-    <Compile Include="Migrations\201811120854403_mig12.Designer.cs">
-      <DependentUpon>201811120854403_mig12.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811120914496_mig13.cs" />
-    <Compile Include="Migrations\201811120914496_mig13.Designer.cs">
-      <DependentUpon>201811120914496_mig13.cs</DependentUpon>
+    <Compile Include="Migrations\201811141228589_mariem.cs" />
+    <Compile Include="Migrations\201811141228589_mariem.Designer.cs">
+      <DependentUpon>201811141228589_mariem.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PiContext.cs" />
@@ -162,29 +134,8 @@
     <Folder Include="Configurations\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811061953204_UserMig.resx">
-      <DependentUpon>201811061953204_UserMig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811081912067_Migrationv2.0.resx">
-      <DependentUpon>201811081912067_Migrationv2.0.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811101145093_mig.resx">
-      <DependentUpon>201811101145093_mig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811101243482_Migdoctordisponibility.resx">
-      <DependentUpon>201811101243482_Migdoctordisponibility.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811111156585_malekmig.resx">
-      <DependentUpon>201811111156585_malekmig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811112115313_x9.resx">
-      <DependentUpon>201811112115313_x9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811120854403_mig12.resx">
-      <DependentUpon>201811120854403_mig12.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811120914496_mig13.resx">
-      <DependentUpon>201811120914496_mig13.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811141228589_mariem.resx">
+      <DependentUpon>201811141228589_mariem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

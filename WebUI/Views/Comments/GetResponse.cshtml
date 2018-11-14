@@ -1,0 +1,233 @@
+﻿
+@{
+    ViewBag.Title = "GetResponse";
+}
+
+
+@model IEnumerable<WebUI.ViewModels.PostsVM>
+
+@{
+    ViewBag.Title = "GetPosts";
+    var postid = 0;
+}
+<section class="content">
+
+    <div class="row">
+        <div class="col-md-3">
+
+            <!-- Profile Image -->
+            <!-- /.box -->
+            <!-- About Me Box -->
+            <!-- /.box -->
+        </div>
+
+        <!-- /.col -->
+        <div class="col-md-9">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#activity" data-toggle="tab">Forum</a></li>
+                    <li><a href="#timeline" data-toggle="tab">Timeline</a></li>
+                    <li><a href="#settings" data-toggle="tab">Settings</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="active tab-pane" id="activity">
+                        <!-- Post -->
+                        <!-- /.post -->
+                        <!-- Post -->
+                        @if (Model != null)
+                        {
+                            foreach (var post in Model)
+                            {
+                                postid = post.PostID;
+                                <div class="post clearfix">
+                                    <div class="user-block">
+                                        <img class="img-circle img-bordered-sm" src="~/adminlte/dist/img/user7-128x128.jpg" alt="User Image">
+                                        <span class="username">
+                                            <input type="hidden" name="PostID" id="PostID" value="@post.PostID" />
+                                            <a href="#">crée par :  @post.Username </a>
+
+                                            <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
+                                        </span>
+
+                                        <time class="timeago" datetime="@post.PostedDate">@post.PostedDate</time>
+                                    </div>
+                                    <!-- /.user-block -->
+                                    <p>
+                                        @*<a href="@Url.Action("GetResponse", "Comments",new { id = item.PostID })">*@
+                                        Titre :   @post.Titre
+                                        <br /><br />
+                                        @post.Message
+                                        @*</a>*@
+                                    </p>
+
+                                    <form class="form-horizontal">
+                                        <div class="form-group margin-bottom-none">
+                                            <div class="col-sm-9">
+
+                                            </div>
+                                            <div class="col-sm-3">
+
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="@string.Format("{0}_{1}", "commentsBlock", post.PostID)" style="border: 1px solid #f1eaea; background-color: #eaf2ff;">
+                                    @if (!User.Identity.IsAuthenticated)
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        <div class="AddComment" style="margin-left: 30%; margin-bottom: 5px; margin-top: 8px;">
+                                            <input type="text" id="@string.Format("{0}_{1}", "comment", post.PostID)" class="form-control input-sm" placeholder="Ajouter un commentaire ..." style="display: inline;" />
+
+                                            <button type="button" class="btn btn-default addComment" data-id="@post.PostID"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                                        </div>
+                                    }
+
+                                </div>
+
+
+
+                            }
+                        }
+
+
+
+
+
+
+
+
+
+
+
+
+                        @section Scripts
+{
+
+                            <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            // l'input comment
+            $("#Comment").ready(function (e) {
+                //var id = postid; PostID
+                var id = parseInt($('#PostID').val());
+                var allCommentsArea = $('<div>').addClass('allComments_' + id);
+
+                //function that allow us to get all comments related to post id
+                $.ajax({
+
+                    type: 'GET',
+                    url: '@Url.Action("GetComments", "Comments")',
+                    data: { postId: id },
+                    success: function (response) {
+
+                        if ($('div').hasClass('allComments_' + id + ''))
+                        {
+                            $('div[class=allComments_' + id + ']').remove();
+                        }
+                        //console.log(response);
+
+
+                        allCommentsArea.html(response);
+                        allCommentsArea.prependTo('#commentsBlock_' + id);
+
+
+                    },
+                    error: function (response) {
+                        alert('Sorry: Comments cannot be loaded !');
+                    }
+
+
+                })
+
+            });
+            //Click Comment
+            $('.Comment').on('click', function () {
+
+                var id = $(this).attr("data-id");
+                var allCommentsArea = $('<div>').addClass('allComments_' + id);
+
+                //function that allow us to get all comments related to post id
+                $.ajax({
+
+                    type: 'GET',
+                    url: '@Url.Action("GetComments", "Comments")',
+                    data: { postId: id },
+                    success: function (response) {
+
+                        if ($('div').hasClass('allComments_' + id + ''))
+                        {
+                            $('div[class=allComments_' + id + ']').remove();
+                        }
+                        //console.log(response);
+
+
+                        allCommentsArea.html(response);
+                        allCommentsArea.prependTo('#commentsBlock_' + id);
+
+
+                    },
+                    error: function (response) {
+                        alert('Sorry: Comments cannot be loaded !');
+                    }
+
+
+                })
+
+            });
+
+            //Add New Comment
+            $('.addComment').on('click', function () {
+
+                var postId = $(this).attr('data-id');
+                var commentMsg = $('#comment_' + postId).val();
+                var dateTimeNow = new Date();
+
+                //alert('Hello');
+                var comment = {
+                    CommentMsg: commentMsg,
+                    CommentedDate: dateTimeNow.toLocaleString()
+                };
+
+                $.ajax({
+
+                    type: 'POST',
+                    url: '@Url.Action("AddComment", "Comments")',
+                    data: { comment, postId },
+                    success: function (response) {
+
+                        $('div[class=allComments_' + postId + ']').remove();
+
+                        var allCommentsArea = $('<div>').addClass('allComments_' + postId);
+                        allCommentsArea.html(response);
+
+                        allCommentsArea.prependTo('#commentsBlock_' + postId);
+
+                    },
+                    error: function (response) {
+                        alert('Sorry: Something Wrong');
+                    }
+
+                });
+
+            });
+
+            jQuery("time.timeago").timeago();
+
+        });
+
+                            </script>
+
+
+                        }
+
+
+
+
+
+
+

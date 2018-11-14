@@ -18,8 +18,14 @@ namespace Domain
     }
     public class User  : IdentityUser
     {
-        
-        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            this.Comments = new HashSet<Comment>();
+        }
+
+
+
         [Required(ErrorMessage = "Champ obligatoire")]
         [MaxLength(50)]
         public String firstName { get; set; }
@@ -51,13 +57,17 @@ namespace Domain
       
        
         public virtual ICollection<Appointment> Appointments { get; set; }
-        
-       
-        
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Post> Posts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Comment> Comments { get; set; }
 
 
-       
+
+
+
 
     }
-   
+
 }

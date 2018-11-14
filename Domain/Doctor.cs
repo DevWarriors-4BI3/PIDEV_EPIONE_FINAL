@@ -9,6 +9,7 @@ namespace Domain
     public class Doctor: User
     {
         public virtual Speciality Speciality { get; set; }
+
         public virtual ICollection<Disponibility> disponibilities { get; set; }
     }
 }
