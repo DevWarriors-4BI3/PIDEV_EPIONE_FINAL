@@ -23,15 +23,28 @@ namespace WebUI.Controllers
             return View(tretements);
         }
 
-        [HttpPost]
+        //[HttpPost]
 
-        public ActionResult Index(string UserId)
-        {
-            // var ProductSearched = sp.GetMany(p=>p.Name== searchString);
-            //var MedSearched = sm.GetMany(p => p.UserId==UserId);
-            var TreSearched = st.GetMany().Where(s => s.UserId == UserId);
-            return View(TreSearched);
-        }
+        //public ActionResult Index(string UserId)
+        //{
+        //    // var ProductSearched = sp.GetMany(p=>p.Name== searchString);
+        //    //var MedSearched = sm.GetMany(p => p.UserId==UserId);
+        //    var TreSearched = st.GetMany().Where(s => s.UserId == UserId);
+        //    return View(TreSearched);
+        //}
+
+
+        //    public ActionResult ExportPDF()
+        //{
+        //    return new ActionAsPdf("Index")
+        //    {
+        //        FileName = Server.MapPath("~/Content/listtretemnts.pdf")
+        //    };
+         
+
+        //}
+
+
 
         // GET: Tretement/Details/5
         public ActionResult Details(int id)

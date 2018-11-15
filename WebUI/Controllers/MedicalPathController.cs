@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebUI.Models;
+using System.Net.Mail;
 
 namespace WebUI.Controllers
 {
@@ -90,7 +91,27 @@ namespace WebUI.Controllers
                 // TODO: Add insert logic here
                 sm.Add(p);
                 sm.Commit();
-                return  RedirectToAction("Index");
+                /****Mail****/
+
+                try
+                {
+                    MailMessage message = new MailMessage("aminekotti.amine@gmail.com", "aminekotti.amine@gmail.com", "Parcour ", "Il faut avoir un autre specialiste");
+                    message.IsBodyHtml = true;
+                    SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                    client.EnableSsl = true;
+                    client.Credentials = new System.Net.NetworkCredential("aminekotti.amine@gmail.com", "amine44108329");
+                    client.Send(message);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.StackTrace);
+                }
+
+                /****Mail****/
+
+
+
+                return RedirectToAction("Index");
             }
             catch 
             {  

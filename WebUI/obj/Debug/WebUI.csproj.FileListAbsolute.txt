@@ -531,26 +531,18 @@ C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FI
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Microsoft.AspNet.SignalR.Client.xml
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Microsoft.AspNet.SignalR.Core.xml
 C:\Users\medma\Documents\Visual Studio 2015\Projects\EpionePiDev\PIDEV_EPIONE_FINAL\WebUI\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
-C:\Users\Amine\Documents\GitHub\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
-C:\Users\Amine\Documents\GitHub\WebUI\obj\Debug\WebUI.Migrations.mig.resources
-C:\Users\Amine\Documents\GitHub\WebUI\obj\Debug\WebUI.Migrations.migreqaddress.resources
-C:\Users\Amine\Documents\GitHub\WebUI\obj\Debug\WebUI.Migrations.malekmig.resources
-C:\Users\Amine\Documents\GitHub\WebUI\obj\Debug\WebUI.Migrations.f5.resources
-C:\Users\Amine\Documents\GitHub\WebUI\obj\Debug\WebUI.csproj.GenerateResource.Cache
-C:\Users\Amine\Documents\GitHub\WebUI\obj\Debug\WebUI.dll
-C:\Users\Amine\Documents\GitHub\WebUI\obj\Debug\WebUI.pdb
-C:\Users\Amine\Documents\GitHub\WebUI\bin\ApplicationInsights.config
 C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\csc.exe
-C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\VBCSCompiler.exe
+C:\Users\Amine\Documents\GitHub\WebUI\bin\ApplicationInsights.config
+C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
 C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\vbc.exe
-C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\VBCSCompiler.exe
 C:\Users\Amine\Documents\GitHub\WebUI\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Amine\Documents\GitHub\WebUI\bin\WebUI.dll.config
 C:\Users\Amine\Documents\GitHub\WebUI\bin\WebUI.dll
@@ -570,6 +562,7 @@ C:\Users\Amine\Documents\GitHub\WebUI\bin\Gnostice.PDFOne.Windows.PDFViewer.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\Gnostice.XtremeFontEngine.4.0.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\Gnostice.XtremeImageEngine.4.0.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\Google.Protobuf.dll
+C:\Users\Amine\Documents\GitHub\WebUI\bin\GUI.exe
 C:\Users\Amine\Documents\GitHub\WebUI\bin\Ionic.Zlib.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\itextsharp.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\log4net.dll
@@ -618,6 +611,7 @@ C:\Users\Amine\Documents\GitHub\WebUI\bin\System.Web.WebPages.Razor.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\WebGrease.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\Data.pdb
 C:\Users\Amine\Documents\GitHub\WebUI\bin\Domain.pdb
+C:\Users\Amine\Documents\GitHub\WebUI\bin\GUI.pdb
 C:\Users\Amine\Documents\GitHub\WebUI\bin\ServicePattern.pdb
 C:\Users\Amine\Documents\GitHub\WebUI\bin\Service.pdb
 C:\Users\Amine\Documents\GitHub\WebUI\bin\Google.Protobuf.xml
@@ -682,3 +676,6 @@ C:\Users\Amine\Documents\GitHub\WebUI\bin\fr\Microsoft.Owin.Security.Facebook.re
 C:\Users\Amine\Documents\GitHub\WebUI\bin\fr\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\fr\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\Amine\Documents\GitHub\WebUI\bin\fr\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Amine\Documents\GitHub\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
+C:\Users\Amine\Documents\GitHub\WebUI\obj\Debug\WebUI.dll
+C:\Users\Amine\Documents\GitHub\WebUI\obj\Debug\WebUI.pdb

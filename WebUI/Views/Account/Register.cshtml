@@ -111,6 +111,14 @@
                     </div>
                 </div>
 
+                @*@*Drop Down List*@
+                <div class="form-group">
+                    @Html.LabelFor(m => m.SpecialityId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(m => m.SpecialityId, Model.Specialitys)
+                        @Html.ValidationMessageFor(m => m.SpecialityId)
+                    </div>
+                </div>
 
 
 

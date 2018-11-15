@@ -2,11 +2,13 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutDoctorSpace.cshtml";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-<h2>Modifier Parcour Patient</h2>
 
+<div class="box-header">
+    <h3 class="box-title">Modifier  Parcour Patient</h3>
+</div>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()

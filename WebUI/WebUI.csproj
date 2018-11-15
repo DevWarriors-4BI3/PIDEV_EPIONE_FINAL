@@ -306,23 +306,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Hubs\Chat.cs" />
-    <Compile Include="Migrations\201811101138037_mig.cs" />
-    <Compile Include="Migrations\201811101138037_mig.Designer.cs">
-      <DependentUpon>201811101138037_mig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811111137428_migreqaddress.cs" />
-    <Compile Include="Migrations\201811111137428_migreqaddress.Designer.cs">
-      <DependentUpon>201811111137428_migreqaddress.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811111155370_malekmig.cs" />
-    <Compile Include="Migrations\201811111155370_malekmig.Designer.cs">
-      <DependentUpon>201811111155370_malekmig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811112209031_f5.cs" />
-    <Compile Include="Migrations\201811112209031_f5.Designer.cs">
-      <DependentUpon>201811112209031_f5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
     <Compile Include="Models\DoctorModels.cs" />
@@ -1499,11 +1482,6 @@
     <Content Include="Views\MedicalPath\Details.cshtml" />
     <Content Include="Views\MedicalPath\Edit.cshtml" />
     <Content Include="Views\MedicalPath\Index.cshtml" />
-    <Content Include="Views\Create.cshtml" />
-    <Content Include="Views\Delete.cshtml" />
-    <Content Include="Views\Details.cshtml" />
-    <Content Include="Views\Edit.cshtml" />
-    <Content Include="Views\Index.cshtml" />
     <Content Include="Views\Tretement\Create.cshtml" />
     <Content Include="Views\Tretement\Delete.cshtml" />
     <Content Include="Views\Tretement\Details.cshtml" />
@@ -1527,6 +1505,10 @@
       <Project>{80b0794a-953f-4095-b8fd-6b87b361c40e}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GUI\GUI.csproj">
+      <Project>{1694E228-E495-4FBB-8DCD-56013ADB0C33}</Project>
+      <Name>GUI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ServicePattern\ServicePattern.csproj">
       <Project>{498E3058-8C85-4442-8C96-06135C96D03D}</Project>
       <Name>ServicePattern</Name>
@@ -1535,20 +1517,6 @@
       <Project>{e74c8001-7beb-4688-a8df-9f13dcfd8815}</Project>
       <Name>Service</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811101138037_mig.resx">
-      <DependentUpon>201811101138037_mig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811111137428_migreqaddress.resx">
-      <DependentUpon>201811111137428_migreqaddress.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811111155370_malekmig.resx">
-      <DependentUpon>201811111155370_malekmig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811112209031_f5.resx">
-      <DependentUpon>201811112209031_f5.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

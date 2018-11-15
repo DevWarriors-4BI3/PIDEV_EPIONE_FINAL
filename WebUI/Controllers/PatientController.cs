@@ -10,7 +10,7 @@ using Domain;
 
 namespace WebUI.Controllers
 {
-  
+     [Authorize]
     public class PatientController : Controller
     {
         // GET: Patient

@@ -214,7 +214,7 @@ C:\Users\Amine\Documents\GitHub\Data\bin\Debug\fr\Microsoft.AspNet.Identity.Core
 C:\Users\Amine\Documents\GitHub\Data\bin\Debug\fr\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 C:\Users\Amine\Documents\GitHub\Data\bin\Debug\fr\Microsoft.AspNet.Identity.Owin.resources.dll
 C:\Users\Amine\Documents\GitHub\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
-C:\Users\Amine\Documents\GitHub\Data\obj\Debug\Data.dll
-C:\Users\Amine\Documents\GitHub\Data\obj\Debug\Data.pdb
 C:\Users\Amine\Documents\GitHub\Data\obj\Debug\Data.Migrations.createDB.resources
 C:\Users\Amine\Documents\GitHub\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+C:\Users\Amine\Documents\GitHub\Data\obj\Debug\Data.dll
+C:\Users\Amine\Documents\GitHub\Data\obj\Debug\Data.pdb
